@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="form-section" class="card">
+        <h2>Online Application Form</h2>
+        <p class="subtitle">Please fill out your details accurately below.</p>
+        
+        <form id="registrationForm" action="process.php" method="POST">
+            <div class="form-group">
+                <label for="fullname">Full Name *</label>
+                <input type="text" id="fullname" name="fullname" placeholder="e.g. Aarav Sharma" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="aarav@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender *</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">-- Select Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Non-Binary">Non-Binary</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Program / Position Applying For *</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Select Option --</option>
+                    <option value="Full-Stack Web Development">Full-Stack Web Development</option>
+                    <option value="Data Science & AI">Data Science & AI</option>
+                    <option value="Cloud Computing & DevOps">Cloud Computing & DevOps</option>
+                    <option value="UI/UX Product Design">UI/UX Product Design</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Residential Address *</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your full street address, city, and pin code" required></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" class="btn-primary">Submit Application</button>
+        </form>
+    </div>
+
+    <div id="result-section" class="card" style="display: none;"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
